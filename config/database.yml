@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  database: school_managment
+  username: postgres
+  password: root
+  encoding: unicode
+  port: 5432
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
