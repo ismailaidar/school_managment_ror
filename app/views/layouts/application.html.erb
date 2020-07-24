@@ -2,15 +2,18 @@
 <html>
   <head>
     <title>SchoolManagment</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= render 'partials/head' %>
 </head>
 
   <body>
-    <%= yield %>
+    <%= render 'partials/navbar' %>
+    <div class="container-fluid">
+      <div class="row">
+        <%= render 'partials/sidebar' %>
+      </div>
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>
