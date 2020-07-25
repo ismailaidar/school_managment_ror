@@ -1,3 +1,6 @@
 class Profile < ApplicationRecord
-  has_one :address, class_name: "address", foreign_key: "address_id"
+  belongs_to :address
+  has_one :student
+  has_one :employee
+  accepts_nested_attributes_for :address
 end

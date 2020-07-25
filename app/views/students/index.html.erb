@@ -2,7 +2,7 @@
 
 <h1>Students</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Date joined</th>
@@ -20,7 +20,7 @@
         <td><%= student.date_joined %></td>
         <td><%= student.school_name %></td>
         <td><%= student.phone %></td>
-        <td><%= student.address %></td>
+        <td><%= student.profile.address_id %></td>
         <td><%= student.profile_id %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>

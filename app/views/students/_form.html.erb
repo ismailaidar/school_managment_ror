@@ -26,15 +26,45 @@
     <%= form.text_field :phone %>
   </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
+  <%= form.fields_for :profile do |profile| %>
+  <h4>Profile</h4>
+      <div class="field">
+        <%= profile.label :first_name %>
+        <%= profile.text_field :first_name %>
+      </div>
+      <div class="field">
+        <%= profile.label :last_name %>
+        <%= profile.text_field :last_name %>
+      </div>
+      <div class="field">
+        <%= profile.label :dob %>
+        <%= profile.date_field :dob %>
+      </div>
 
-  <div class="field">
-    <%= form.label :profile_id %>
-    <%= form.text_field :profile_id %>
-  </div>
+      <%= profile.fields_for :address do |address| %>
+        <fieldset>
+          <legend>Addresse:</legend>
+          <div class="field">
+            <%= address.label :street1 %>
+            <%= address.text_field :street1 %>
+          </div>
+          <div class="field">
+            <%= address.label :street2 %>
+            <%= address.text_field :street2 %>
+          </div>
+          <div class="field">
+            <%= address.label :zip_code %>
+            <%= address.text_field :zip_code %>
+          </div>
+          <div class="field">
+            <%= address.label :city %>
+            <%= address.text_field :city %>
+          </div>
+        </fieldset>
+      <% end %>
+
+  
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>

@@ -26,10 +26,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users"></span>
+            <%= link_to students_path, class:"nav-link" do %>
               Gérer les étudiants
-            </a>
+              <span data-feather="file-text"></span>
+            <% end %>
           </li>
         </ul>
 
