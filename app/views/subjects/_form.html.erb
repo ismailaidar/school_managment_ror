@@ -18,7 +18,13 @@
 
   <div class="field">
     <%= form.label :level_id %>
-    <%= form.text_field :level_id %>
+    <select name="subject[level_id]" id="level_id">
+      <% @levels.each do |level| %>
+        <option value="<%= level.id %>">
+          <%= level.name %>
+        </option>
+      <% end %>
+    </select>
   </div>
 
   <div class="actions">
