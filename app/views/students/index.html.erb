@@ -22,6 +22,7 @@
         <td><%= student.phone %></td>
         <td><%= student.profile.address_id %></td>
         <td><%= student.profile_id %></td>
+        <td><%= link_to 'Path', paths_path(student.id) %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
