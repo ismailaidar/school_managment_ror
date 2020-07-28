@@ -1,6 +1,6 @@
 class PathController < ApplicationController
   def index
     @student = Student.find(params[:student_id])
-    @path = Path.new
+    @subjects = Subject.where.not(id: @student.subjects.map(&:id))
   end
 end

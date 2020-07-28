@@ -1,7 +1,8 @@
 class Student < ApplicationRecord
   belongs_to :profile, dependent: :destroy
   belongs_to :level, foreign_key: 'level_id'
-  has_many :subjects, through: :path
+  has_many :paths
+  has_many :subjects, through: :paths
   
   accepts_nested_attributes_for :profile, allow_destroy: true
 
