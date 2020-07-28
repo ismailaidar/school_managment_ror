@@ -21,4 +21,19 @@ class PathSubjectsReflex < ApplicationReflex
   #   end
   #
   # Learn more at: https://docs.stimulusreflex.com
+
+  def add_subject
+    @student = Student.find(element.dataset[:studentid])
+    @subject = Subject.find(element.dataset[:subjectid])
+    @student.subjects.append(@subject)
+    @student.save()
+  end
+
+  def delete_subject
+    @student = Student.find(element.dataset[:studentid])
+    @subject = Subject.find(element.dataset[:subjectid])
+    @student.subjects.delete(@subject)
+    @student.save()
+  end
+  
 end
