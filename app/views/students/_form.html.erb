@@ -1,4 +1,8 @@
-<%= form_with(model: student, local: true) do |form| %>
+<div class="row">
+
+<div class="col-md-8 offset-md-2">
+
+  <%= form_with(model: student, local: true) do |form| %>
   <% if student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -11,64 +15,65 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :date_joined %>
-    <%= form.datetime_select :date_joined %>
+    <%= form.date_field :date_joined , {class: "form-control"} %>
   </div>
   
-  <div class="field">
+  <div class="form-group">
     <%= form.label :inscription_number %>
-    <%= form.text_field :inscription_number, value: '' %>
+    <%= form.text_field :inscription_number, value: '' , class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :level %>
-    <%= form.select :level_id, Level.all.collect {|c| [c.name, c.id]} %>
+    <%= form.select :level_id, Level.all.collect {|c| [c.name, c.id]} , {},
+        {:class => "form-control"} %>
   </div>
 
-  <div class="field">
-    <%= form.label :school_name %>
-    <%= form.text_field :school_name %>
+  <div class="form-group">
+    <%= form.label :school_name  %>
+    <%= form.text_field :school_name , class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
+  <div class="form-group">
+    <%= form.label :phone  %>
+    <%= form.text_field :phone , class: "form-control" %>
   </div>
 
-  <%= form.fields_for :profile do |profile| %>
+  <%= form.fields_for :profile do |profile|  %>
   <h4>Profile</h4>
-      <div class="field">
-        <%= profile.label :first_name %>
-        <%= profile.text_field :first_name %>
+      <div class="form-group">
+        <%= profile.label :first_name%>
+        <%= profile.text_field :first_name , class: "form-control" %>
       </div>
-      <div class="field">
+      <div class="form-group">
         <%= profile.label :last_name %>
-        <%= profile.text_field :last_name %>
+        <%= profile.text_field :last_name , class: "form-control" %>
       </div>
-      <div class="field">
+      <div class="form-group">
         <%= profile.label :dob %>
-        <%= profile.date_field :dob %>
+        <%= profile.date_field :dob , class: "form-control" %>
       </div>
 
       <%= profile.fields_for :address do |address| %>
         <fieldset>
           <legend>Addresse:</legend>
-          <div class="field">
-            <%= address.label :street1 %>
-            <%= address.text_field :street1 %>
+          <div class="form-group">
+            <%= address.label :street1  %>
+            <%= address.text_field :street1 , class: "form-control" %>
           </div>
-          <div class="field">
-            <%= address.label :street2 %>
-            <%= address.text_field :street2 %>
+          <div class="form-group">
+            <%= address.label :street2  %>
+            <%= address.text_field :street2 , class: "form-control" %>
           </div>
-          <div class="field">
+          <div class="form-group">
             <%= address.label :zip_code %>
-            <%= address.text_field :zip_code %>
+            <%= address.text_field :zip_code , class: "form-control" %>
           </div>
-          <div class="field">
+          <div class="form-group">
             <%= address.label :city %>
-            <%= address.text_field :city %>
+            <%= address.text_field :city , class: "form-control" %>
           </div>
         </fieldset>
       <% end %>
@@ -77,6 +82,11 @@
   <% end %>
 
   <div class="actions">
-    <%= form.submit %>
+    <input type="submit" class="btn btn-block btn-primary">
   </div>
 <% end %>
+
+
+</div>
+
+</div>
