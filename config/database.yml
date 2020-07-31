@@ -5,7 +5,7 @@ default: &default
   username: postgres
   password: root
   encoding: unicode
-  port: 5432
+  port: 5433
 
 development:
   <<: *default
