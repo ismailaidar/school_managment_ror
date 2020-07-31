@@ -35,5 +35,11 @@ class PathSubjectsReflex < ApplicationReflex
     @student.subjects.delete(@subject)
     @student.save()
   end
+
+  def submit_filter
+    @group = params[:group]
+    @formation = params[:formation]
+  end
+  
   
 end
