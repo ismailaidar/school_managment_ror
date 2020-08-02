@@ -66,6 +66,27 @@
             </div>
         </div>
 
+        <div class="row mt-5">
+            <table class="table table-hover">
+                <tr>
+                    <th>Prix:</th>
+                    <td>
+                        <%= @student.subjects.pluck(:price).sum %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>langues:</th>
+                    <td>
+                        <% @student.subjects.each do |single| %>
+                            <span class="badge badge-secondary">
+                                <%= single.name %> - <%= single.level.name %>
+                            </span>
+                        <% end %>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
     </div>
 
 </div>

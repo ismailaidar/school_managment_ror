@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_31_011354) do
+ActiveRecord::Schema.define(version: 2020_08_01_161801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_011354) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "education_type", default: 1
+    t.decimal "price", default: "0.0"
     t.index ["level_id"], name: "index_subjects_on_level_id"
   end
 

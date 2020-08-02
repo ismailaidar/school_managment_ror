@@ -20,6 +20,7 @@ class SubjectsController < ApplicationController
 
   # GET /subjects/1/edit
   def edit
+    @levels = Level.all
   end
 
   # POST /subjects
@@ -70,6 +71,6 @@ class SubjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subject_params
-      params.require(:subject).permit(:name, :level_id)
+      params.require(:subject).permit(:name, :level_id, :price)
     end
 end
